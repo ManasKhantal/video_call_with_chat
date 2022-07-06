@@ -35,6 +35,7 @@ navigator.mediaDevices.getUserMedia({
 
 socket.on('user-disconnected', userId => {
     if (peers[userId]) peers[userId].close()
+    alert('One or more users left!')
 })
 
 myPeer.on('open', id => {
