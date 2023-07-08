@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video-grid')
 var myPeer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port: '443'
+    port: '3000'
 })
 const myVideo = document.createElement('video')
 myVideo.muted = true
@@ -36,6 +36,13 @@ navigator.mediaDevices.getUserMedia({
 socket.on('user-disconnected', userId => {
     if (peers[userId]) peers[userId].close()
     alert('One or more users left!')
+    const call = myPeer.call(userId, stream)
+    const video = document.createElement('video')
+    call.on('user-disconnected', () => {
+        video.remove()
+    })
+
+    peers[userId] = call
 })
 
 myPeer.on('open', id => {
@@ -75,7 +82,7 @@ function muteVideo() {
     myVideoStream.getVideoTracks()[0].enabled = isVideo
 }
 
-micBtn.addEventListener('click', function toggleCamera() {
+micBtn.addEventListener('click', function toggleMic() {
     const initialText = '🎙️ Mic On';
 
     if (micBtn.innerText.toLowerCase().includes(initialText.toLowerCase())) {

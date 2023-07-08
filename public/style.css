@@ -16,12 +16,15 @@ button:hover {
 }
 
 .call-action-div {
-    margin-left: 40%;
+    display: flex;
+    gap: 0.5%;
+    justify-content: center;
+    width: 99%;
 }
 
 .main {
-    display: inline-block;
-    height: 100vh;
+    /* display: inline-block; */
+    /* height: 100%; */
     display: flex;
 }
 
@@ -29,7 +32,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     flex: 0.2;
-    background-color: #201e1e;
+    background-color: #f5efef;
     border-radius: 10px;
     padding-right: 3%;
 }
@@ -53,23 +56,36 @@ button:hover {
     padding-right: 3%;
 }
 
+.message_info {
+    text-align: center;
+    margin-left: 6%;
+    background-color: #e0dddd;
+    padding: 3%;
+    border-radius: 12px;
+    font-weight: lighter;
+}
+
 #input {
-    padding: 4%;
-    border-radius: 10px;
+    padding: 4% 0 4% 4%;
+    border-radius: 27px;
     font-family: Arial;
     margin-left: 2%;
+    background-color: #e0dddd;
     float: left;
-    width: 70%;
+    width: 75%;
 }
 
 #submit {
     float: right;
     padding: 3%;
+    background-color: #e0dddd;
+    border-color: #292929;
 }
 
 li {
-    color: white;
+    color: black;
     font-size: 1.1rem;
     overflow-wrap: break-word;
     margin-top: 5px;
+    /* list-style-type: none; */
 }

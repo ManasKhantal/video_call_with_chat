@@ -11,6 +11,7 @@
     <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/1c6e0477b8.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
     <title>Meet-Zone</title>
     <link rel="stylesheet" href="style.css">
@@ -40,14 +41,16 @@
         <div class="main_left">
             <h1 style="color:white;text-align: center;"></h1>
             <div id="video-grid"></div>
-            <div class="call-action-div">
-                <button id="micBtn" onclick="muteAudio()">🎙️ Mic On</button>
-                <button id="cameraBtn" onclick="muteVideo()">📷 Camera On</button>
-            </div>
         </div>
         <div class="main_right">
             <div class="main__header">
-                <h3 style="color: white;text-align: center;">Chat</h3>
+                <h3 style="color: rgb(0, 0, 0);margin-left: 7%;font-weight: 100;">In-call messages</h3>
+                <h5 class="message_info">Messages sent here
+                    can be
+                    seen by
+                    everyone in the
+                    call
+                </h5>
             </div>
             <div id="main_chat_window">
                 <ul class="messages">
@@ -56,12 +59,16 @@
 
             </div>
             <div class="main_message_container">
-                <form id="form" action="">
-                    <input id="input" placeholder="Type your message here.." autocomplete="off"></input>
+                <form id="form" action="" style="width: 100%;margin-left: 7%;">
+                    <input id="input" placeholder="Send a message" autocomplete="off"></input>
                     <input id="submit" type="submit" value="➡️">
                 </form>
             </div>
         </div>
+    </div>
+    <div class="call-action-div">
+        <button id="micBtn" onclick="muteAudio()">🎙️ Mic On</button>
+        <button id="cameraBtn" onclick="muteVideo()">📷 Camera On</button>
     </div>
 </body>
 
