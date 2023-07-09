@@ -20,18 +20,21 @@
         #video-grid {
             display: flex;
             justify-content: center;
-            align-items: center;
+            /* align-items: center; */
             flex-wrap: wrap;
-            margin-top: 6%;
+            /* margin-top: 6%; */
         }
 
         video {
-            width: 400px;
-            height: 300px;
-            border-radius: 5%;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            height: 90%;
+            width: 100%;
+            border-radius: 50%;
             object-fit: cover;
-            margin-right: 5%;
-            margin-bottom: 3%;
+            padding: 2px;
+            /* margin-right: 5%;
+            margin-bottom: 3%; */
         }
     </style>
 </head>
@@ -39,8 +42,19 @@
 <body>
     <div class="main">
         <div class="main_left">
-            <h1 style="color:white;text-align: center;"></h1>
-            <div id="video-grid"></div>
+            <div class="main__videos">
+                <div id="video-grid">
+
+                </div>
+                <div class="self" id="self-video-box" style="position: fixed;
+                top: 10px;
+                left: 10px;
+                height: 160px;
+                width: 160px;
+                border-radius: 50%;
+                object-fit:cover">
+                </div>
+            </div>
         </div>
         <div class="main_right">
             <div class="main__header">
@@ -59,16 +73,26 @@
 
             </div>
             <div class="main_message_container">
-                <form id="form" action="" style="width: 100%;margin-left: 7%;">
+                <form id="form" action=""
+                    style="width:100%;margin-left: 7%;border-radius: 15px;background-color: #e0dddd;">
                     <input id="input" placeholder="Send a message" autocomplete="off"></input>
-                    <input id="submit" type="submit" value="➡️">
+                    <!-- <input id="submit" type="submit" value="➡️"> -->
+                    <i onclick="sendMsg()" id="submit" class="fa-solid fa-paper-plane fa-lg"></i>
                 </form>
             </div>
         </div>
     </div>
     <div class="call-action-div">
-        <button id="micBtn" onclick="muteAudio()">🎙️ Mic On</button>
-        <button id="cameraBtn" onclick="muteVideo()">📷 Camera On</button>
+        <div id="left-bottom-time">
+            <p><span id="time"></span></p>
+        </div>
+        <div class="control-option">
+            <!-- <button id="micBtn" onclick="muteAudio()">🎙️ Mic On</button>
+            <button id="cameraBtn" onclick="muteVideo()">📷 Camera On</button> -->
+            <i id="micBtn" onclick="muteAudio()" class="fa-solid fa-microphone fa-2xl"></i>
+            <i id="cameraBtn" onclick="muteVideo()" class="fa-solid fa-video fa-2xl"></i>
+            <i id="hangBtn" onclick="hangCall()" class="fa-solid fa-phone-slash fa-2xl" style="color: #ff0000;"></i>
+        </div>
     </div>
 </body>
 
